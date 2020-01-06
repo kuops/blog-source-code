@@ -31,7 +31,7 @@ site:
     width: 40
     height: 40
     url: ../images/logo.png
-  title: Hexo # 页面title
+  title: DevOps From Scratch # 页面title
   favicon: /favicon.png
   board: <p>欢迎交流与分享经验!</p> # 站点公告
   copyright: false # 底部版权信息
@@ -102,7 +102,7 @@ share:
 
 # Github
 github: 
-  username: cofess  # github username
+  username: kuops # github username
 
 # Comment
 # Gitment
@@ -186,9 +186,9 @@ profile:
   enabled: true # Whether to show profile bar
   avatar: images/avatar.jpg
   gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
-  author: Shane
+  author: Shane Hou
   author_title: DevOps Engineer
-  author_description: 懒。
+  author_description:
   location: BeiJing, China
   follow: https://github.com/kuops
   # Social Links
