@@ -33,15 +33,15 @@ site:
     url: ../images/logo.png
   title: DevOps From Scratch # 页面title
   favicon: /favicon.png
-  board: <p>欢迎交流与分享经验!</p> # 站点公告
-  copyright: false # 底部版权信息
+  board: <p>Cloud Native 101</p> # 站点公告
+  copyright: true # 底部版权信息
 
 # config
 config:
   skin: # 主题颜色 theme-black theme-blue theme-green theme-purple
   layout: main-center # 布局方式 main-left main-center main-right
   toc: true # 是否开启文章章节目录导航
-  menu_highlight: false # 是否开启当前菜单高亮显示
+  menu_highlight: true # 是否开启当前菜单高亮显示
   thumbnail: false # enable posts thumbnail, options: true, false
   excerpt_link: Read More
 
@@ -108,8 +108,8 @@ github:
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 comment:
-  type: valine  # 启用哪种评论系统
-  disqus:  # enter disqus shortname here
+  type: disqus  # 启用哪种评论系统
+  disqus:  kuops # enter disqus shortname here
   youyan: 
     uid: 1783844 # enter youyan uid 
   livere:
