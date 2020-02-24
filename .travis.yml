@@ -1,0 +1,17 @@
+language: node_js
+branches:
+  only:
+  - master
+cache:
+  directories:
+    - node_modules
+install:
+- npm install
+- npm install hexo-cli -g
+script:
+- hexo clean
+- hexo generate -d
+before_install:
+- git config --global user.name "kuops"
+- git config --global user.email opshsy@gmail.com
+
