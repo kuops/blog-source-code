@@ -6,11 +6,13 @@ branches:
   - master
 cache:
   directories:
-    - node_modules
+  - node_modules
 install:
 - npm install
 - npm install hexo-cli -g
 script:
+- ls ~/.ssh
+- cat ~/.ssh/id_rsa
 - hexo clean
 - hexo generate -d
 before_install:
