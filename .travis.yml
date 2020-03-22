@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - "13"
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - node_modules
+install:
+- npm install
+- npm install hexo-cli -g
+script:
+- ls ~/.ssh
+- hexo clean
+- hexo generate -d
+before_install:
+- openssl aes-256-cbc -K $encrypted_c0ad6048baa8_key -iv $encrypted_c0ad6048baa8_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- git config --global user.name "kuops"
+- git config --global user.email opshsy@gmail.com

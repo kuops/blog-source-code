@@ -7,7 +7,7 @@ categories:
 - terminal-tools
 ---
 
-## 简介 
+## 简介
 
 tmux 的作者将其描述为终端多路复用器 (terminal multiplexer)。使用 tmux 的好处主要有两点:
 
@@ -16,9 +16,7 @@ tmux 的作者将其描述为终端多路复用器 (terminal multiplexer)。使�
 
 tmux 所有命令都以前置按键方式进行触发（默认为 `C-b`），`C-b` 表示按住 `ctrl` 键和 ``b` 键:
 
-
 ## 常用操作
-
 
 常用命令:
 
@@ -34,7 +32,6 @@ tmux 所有命令都以前置按键方式进行触发（默认为 `C-b`），`C-
 |退出会话|终端输入 `tmux detach`|
 |结束会话|终端输入 `tmux kill-session -t num/name`|
 
-
 > 这里退出的意思是退出窗口使其后台运行，结束为 kill
 
 如果在一个会话中可以使用命令模式, 按住前置键 + `:`, 进入命令模式:
@@ -44,7 +41,6 @@ tmux 所有命令都以前置按键方式进行触发（默认为 `C-b`），`C-
 |新建窗口|命令模式输入 `new-window -n name`|
 |新建会话|命令模式输入 `new -s name`|
 |切换会话|命令模式输入 `attach-session -t num/name`|
-
 
 常用快捷键
 
@@ -67,7 +63,6 @@ tmux 所有命令都以前置按键方式进行触发（默认为 `C-b`），`C-
 |关闭面板|`prefix x`|
 |切换到下一个面板|`prefix o`|
 |交换面板位置|`prefix }`|
-
 
 ## 复制模式
 
