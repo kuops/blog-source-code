@@ -11,6 +11,7 @@ categories:
 ## 简介
 
 tmux 的作者将其描述为终端多路复用器 (terminal multiplexer)。使用 tmux 的好处主要有两点:
+<!-- more -->
 
 - 多窗口操作，在一个终端分出多个面板
 - 避免 SSH 连接不稳定，断开前台任务问题
@@ -80,10 +81,10 @@ setw -g mode-keys vi
 |进入复制模式|`prefix [`|
 |粘贴选择内容(buffer_0)|`prefix ]`|
 |显示 buffer_0 的内容|命令行模式输入`show-buffer`|
-|复制整个能见的内容到当前的 buffer|`capture-buffer`|
-|列出所有的 buffer|`list-buffers`|
-|选择用于粘贴的 buffer|`choose-buffer`|
-|将 buffer 的内容复制到文件|save-buffer file.txt|
+|复制整个能见的内容到当前的 buffer|命令行模式输入`capture-buffer`|
+|列出所有的 buffer|命令行模式输入`list-buffers`|
+|选择用于粘贴的 buffer|命令行模式输入`choose-buffer`|
+|将 buffer 的内容复制到文件|命令行模式输入 `save-buffer file.txt`|
 
 | vi     | emacs     | 功能                 |
 | ------ | --------- | ---                  |
