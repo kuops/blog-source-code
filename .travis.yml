@@ -19,3 +19,5 @@ before_install:
 - chmod 600 ~/.ssh/id_rsa
 - git config --global user.name "kuops"
 - git config --global user.email opshsy@gmail.com
+- cd themes/fluid
+- git checkout v1.7.4
