@@ -117,14 +117,13 @@ setw -g mode-keys vi
 
 然后按住 `options` 键不放，点击鼠标左键复制。
 
-
 ## 自定义配置
 
 自定义配置放在 `~/.tmux.conf` 中，可以自行 github 搜索相关的配置，来完善自己的配置。
 
 我目前正在使用的配置:
 
-> 需要先安装 tmux 插件管理工具 tpm 
+> 需要先安装 tmux 插件管理工具 tpm
 > tmux 版本 3.0a
 
 ```bash
