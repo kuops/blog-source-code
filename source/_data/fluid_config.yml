@@ -219,7 +219,7 @@ utterances:
 # Disqus
 # 国内用户不要用，已被墙
 disqus:
-  shortname: kuops # your shortname
+  shortname: kuops-com # your shortname
 
 # Gitalk
 # You can get yout ClientID and ClientSecret from https://github.com/settings/applications/new

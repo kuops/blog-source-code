@@ -89,7 +89,7 @@ setw -g mode-keys vi
 | vi     | emacs     | 功能                 |
 | ------ | --------- | ---                  |
 | ^      | M-m       | 跳转到一行开头       |
-| Escape | C-g       | 放弃选择             |
+| Esc    | C-g       | 放弃选择             |
 | k      | Up        | 上移                 |
 | j      | Down      | 下移                 |
 | h      | Left      | 左移                 |
@@ -105,7 +105,7 @@ setw -g mode-keys vi
 | C-b    | Page up   | 上翻一页             |
 | w      | M-f       | 下一个字符           |
 | b      | M-b       | 前一个字符           |
-| q      | Escape    | 退出                 |
+| q      | Esc       | 退出                 |
 | ?      | C-r       | 往上查找             |
 | /      | C-s       | 往下查找             |
 | n      | n         | 查找下一个           |
