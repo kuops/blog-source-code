@@ -1,6 +1,7 @@
 ---
-title: tmux 快速入门
+title: Tmux 快速入门
 date: 2020-03-22 13:34:52
+index_img: "/images/tmux_quick_start/tmux_quick_start_index.png"
 tags:
 - tmux
 categories:
@@ -52,6 +53,8 @@ tmux 所有命令都以前置按键方式进行触发（默认为 `C-b`），`C-
 |切换到下一个会话|`prefix )`|
 |退出会话，使其在后台运行|`prefix d`|
 |切换窗口|`prefix [0-9]`|
+|切换下一个窗口|`prefix p`|
+|切换前一个窗口|`prefix n`|
 |创建新的窗口|`prefix c`|
 |重命名当前窗口|`prefix ,`|
 |显示所有窗口的可选择列表|`prefix w`|
@@ -108,11 +111,71 @@ setw -g mode-keys vi
 | Space  | C-Space   | 进入选择模式         |
 | Enter  | M-w       | 确认选择内容, 并退出 |
 
+如果想在 iterm2 中使用复制，开启 `Applications in terminal may access clipboard` 选项。
+
+![iterm2](/images/tmux_quick_start/tmux_quick_start_01.png)
+
+然后按住 `options` 键不放，点击鼠标左键复制。
+
+
 ## 自定义配置
 
-自定义配置放在 ~/.tmux.conf 中，可以自行 github 搜索相关的配置。
+自定义配置放在 `~/.tmux.conf` 中，可以自行 github 搜索相关的配置，来完善自己的配置。
 
-正在使用的配置:
+我目前正在使用的配置:
 
-主题: [https://github.com/jimeh/tmux-themepack](https://github.com/jimeh/tmux-themepack)
-快捷键映射: [https://github.com/square/maximum-awesome/](https://github.com/square/maximum-awesome)
+> 需要先安装 tmux 插件管理工具 tpm 
+> tmux 版本 3.0a
+
+```bash
+# 使用 C-a 替换 C-b prefix 按键
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+# 把窗口的初始索引值从 0 改为 1
+set -g base-index 1
+
+# 关闭窗口时重新对窗口进行排序
+set-option -g renumber-windows on
+
+# 设定前缀键和命令键之间的延时
+set -sg escape-time 1
+
+# prefix R 重载配置文件
+bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
+
+# 把面板的初始索引值从 0 改为 1
+setw -g pane-base-index 1
+
+# 复制粘贴模式使用 vi 模式
+setw -g mode-keys vi
+
+# 启用鼠标
+set -g mouse on
+
+# 设置默认的终端模式为 256 色模式
+set-option -g default-terminal screen-256color
+
+# 使用 prefix v 和 s 分割面板, 使用 prefix h,j,k,l 在面板间跳转
+bind-key v split-window -h -c "#{pane_current_path}"
+bind-key s split-window -v -c "#{pane_current_path}"
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+# 复制模式使用 v 开始选择，按 y 结束选择并复制
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+
+# 引用主题
+set -g @plugin 'jimeh/tmux-themepack'
+set -g @themepack 'powerline/block/gray'
+
+# 安装 tpm tmux 管理器插件
+set -g @plugin 'tmux-plugins/tpm'
+
+# 保留此行在 tmux 最底部使 tpm 正常工作
+run -b '~/.tmux/plugins/tpm/tpm'
+```
