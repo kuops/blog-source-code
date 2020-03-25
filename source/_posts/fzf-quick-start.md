@@ -1,5 +1,5 @@
 ---
-title: fzf 快速入门
+title: Fzf 快速入门
 date: 2020-03-24 15:50:08
 index_img: "/images/fzf_quick_start/fzf_index.png"
 tags:
@@ -8,10 +8,10 @@ categories:
 - terminal-tools
 ---
 
+<!-- markdownlint-disable MD013 -->
 ## 简介
 
 fzf 是 go 语言写的一款命令行模糊查找器。
-
 
 ## 用法
 
@@ -23,7 +23,6 @@ vim $(fzf)
 
 使用方向键或者 `C-j`, `C-k` 或者 `C-n`, `C-p`选择项目,回车键确认项目
 
-
 安装完毕之后, 默认绑定的快捷键:
 
 - `C-t` 粘贴选择的目录或者文件到命令行
@@ -32,7 +31,7 @@ vim $(fzf)
 
 - `ALT-c` 进入选择的目录, 如果使用的是 iterm2 需要单独设定 `options` 按键为 `Esc+`
 
-![](/images/fzf_quick_start/fzf_iterm2_profiles_setting.png)
+![iterm2_settings](/images/fzf_quick_start/fzf_iterm2_profiles_setting.png)
 
 ## 模糊补全
 
@@ -100,17 +99,16 @@ export FZF_DEFAULT_OPTS
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 ```
 
-
 ## vim
 
-安装以下两个插件, 
+安装以下两个插件:
 
 ```bash
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 ```
 
-常用命令 
+常用命令
 
 - `:Files` 查看当前目录的文件
 - `:Buffers` 切换缓冲区
