@@ -47,14 +47,16 @@ kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisione
 istioctl manifest apply  --set values.global.proxy.accessLogFile="/dev/stdout" --set values.mixer.telemetry.enabled=false --set values.prometheus.enabled=false
 ```
 
-3. 部署示例应用,这里暂且定义为 `/data/log/log-app/info.log` 镜像为 `kuops/log-example-app`, [源码链接](/files/kubernetes-logging-aggeration-using-efk/main.go.text)
+3. 部署示例应用,使用镜像 `kuops/log-example-app`,程序会同时往 `/data/log/log-app/info.log`, [程序源码](https://raw.githubusercontent.com/kuops/kuops.github.io/master/files/kubernetes-logging-aggeration-using-efk/main.go),
+
 
 ```bash
-kubectl apply -f 
+kubectl apply -f https://raw.githubusercontent.com/kuops/kuops.github.io/master/files/kubernetes-logging-aggeration-using-efk/log-app.yaml
 ```
 
+### 部署 efk
 
-### 部署 es
+```bash
 
-
+```
 
