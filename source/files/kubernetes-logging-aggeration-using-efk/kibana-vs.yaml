@@ -1,0 +1,38 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: kibana
+  namespace: logging
+spec:
+  host: kibana
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: elasticsearch
+  namespace: logging
+spec:
+  hosts:
+  - "kibana.INGRESS_NODE_IP.nip.io"
+  gateways:
+  - ingressgateway.istio-system.svc.cluster.local
+  http:
+  - match:
+    - uri:
+        regex: /.*
+    - authority:
+         exact: "kibana.example.com:31447"
+    route:
+    - destination:
+        host: kibana
+        port:
+          number: 5601
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: elasticsearch
+  namespace: logging
+spec:
+  host: elasticsearch
