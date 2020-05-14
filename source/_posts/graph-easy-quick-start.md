@@ -1,5 +1,5 @@
 ---
-title: graph-easy 快速入门
+title: Graph-easy 快速入门
 date: 2020-04-30 13:34:00
 index_img: "/images/graph-easy-quick-start/graph-easy_index.jpg"
 tags:
